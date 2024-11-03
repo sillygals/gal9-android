@@ -45,7 +45,7 @@ import com.sillygals.gal9.core.designsystem.icon.Gal9Icons
 import com.sillygals.gal9.core.designsystem.theme.Gal9Theme
 
 /**
- * Now in Android navigation bar item with icon and label content slots. Wraps Material 3
+ * Gal9 navigation bar item with icon and label content slots. Wraps Material 3
  * [NavigationBarItem].
  *
  * @param selected Whether this item is selected.
@@ -60,7 +60,7 @@ import com.sillygals.gal9.core.designsystem.theme.Gal9Theme
  * only be shown when this item is selected.
  */
 @Composable
-fun RowScope.NiaNavigationBarItem(
+fun RowScope.Gal9NavigationBarItem(
     selected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -79,37 +79,37 @@ fun RowScope.NiaNavigationBarItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = NiaNavigationDefaults.navigationContentColor(),
-            selectedTextColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = NiaNavigationDefaults.navigationContentColor(),
-            indicatorColor = NiaNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = Gal9NavigationDefaults.navigationContentColor(),
+            selectedTextColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = Gal9NavigationDefaults.navigationContentColor(),
+            indicatorColor = Gal9NavigationDefaults.navigationIndicatorColor(),
         ),
     )
 }
 
 /**
- * Now in Android navigation bar with content slot. Wraps Material 3 [NavigationBar].
+ * Gal9 navigation bar with content slot. Wraps Material 3 [NavigationBar].
  *
  * @param modifier Modifier to be applied to the navigation bar.
  * @param content Destinations inside the navigation bar. This should contain multiple
  * [NavigationBarItem]s.
  */
 @Composable
-fun NiaNavigationBar(
+fun Gal9NavigationBar(
     modifier: Modifier = Modifier,
     content: @Composable RowScope.() -> Unit,
 ) {
     NavigationBar(
         modifier = modifier,
-        contentColor = NiaNavigationDefaults.navigationContentColor(),
+        contentColor = Gal9NavigationDefaults.navigationContentColor(),
         tonalElevation = 0.dp,
         content = content,
     )
 }
 
 /**
- * Now in Android navigation rail item with icon and label content slots. Wraps Material 3
+ * Gal9 navigation rail item with icon and label content slots. Wraps Material 3
  * [NavigationRailItem].
  *
  * @param selected Whether this item is selected.
@@ -124,7 +124,7 @@ fun NiaNavigationBar(
  * only be shown when this item is selected.
  */
 @Composable
-fun NiaNavigationRailItem(
+fun Gal9NavigationRailItem(
     selected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -143,17 +143,17 @@ fun NiaNavigationRailItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationRailItemDefaults.colors(
-            selectedIconColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = NiaNavigationDefaults.navigationContentColor(),
-            selectedTextColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = NiaNavigationDefaults.navigationContentColor(),
-            indicatorColor = NiaNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = Gal9NavigationDefaults.navigationContentColor(),
+            selectedTextColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = Gal9NavigationDefaults.navigationContentColor(),
+            indicatorColor = Gal9NavigationDefaults.navigationIndicatorColor(),
         ),
     )
 }
 
 /**
- * Now in Android navigation rail with header and content slots. Wraps Material 3 [NavigationRail].
+ * Gal9 navigation rail with header and content slots. Wraps Material 3 [NavigationRail].
  *
  * @param modifier Modifier to be applied to the navigation rail.
  * @param header Optional header that may hold a floating action button or a logo.
@@ -161,7 +161,7 @@ fun NiaNavigationRailItem(
  * [NavigationRailItem]s.
  */
 @Composable
-fun NiaNavigationRail(
+fun Gal9NavigationRail(
     modifier: Modifier = Modifier,
     header: @Composable (ColumnScope.() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit,
@@ -169,18 +169,18 @@ fun NiaNavigationRail(
     NavigationRail(
         modifier = modifier,
         containerColor = Color.Transparent,
-        contentColor = NiaNavigationDefaults.navigationContentColor(),
+        contentColor = Gal9NavigationDefaults.navigationContentColor(),
         header = header,
         content = content,
     )
 }
 
 /**
- * Now in Android navigation suite scaffold with item and content slots.
+ * Gal9 navigation suite scaffold with item and content slots.
  * Wraps Material 3 [NavigationSuiteScaffold].
  *
  * @param modifier Modifier to be applied to the navigation suite scaffold.
- * @param navigationSuiteItems A slot to display multiple items via [NiaNavigationSuiteScope].
+ * @param navigationSuiteItems A slot to display multiple items via [Gal9NavigationSuiteScope].
  * @param windowAdaptiveInfo The window adaptive info.
  * @param content The app content inside the scaffold.
  */
@@ -189,8 +189,8 @@ fun NiaNavigationRail(
     ExperimentalMaterial3AdaptiveApi::class,
 )
 @Composable
-fun NiaNavigationSuiteScaffold(
-    navigationSuiteItems: NiaNavigationSuiteScope.() -> Unit,
+fun Gal9NavigationSuiteScaffold(
+    navigationSuiteItems: Gal9NavigationSuiteScope.() -> Unit,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
     content: @Composable () -> Unit,
@@ -199,30 +199,30 @@ fun NiaNavigationSuiteScaffold(
         .calculateFromAdaptiveInfo(windowAdaptiveInfo)
     val navigationSuiteItemColors = NavigationSuiteItemColors(
         navigationBarItemColors = NavigationBarItemDefaults.colors(
-            selectedIconColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = NiaNavigationDefaults.navigationContentColor(),
-            selectedTextColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = NiaNavigationDefaults.navigationContentColor(),
-            indicatorColor = NiaNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = Gal9NavigationDefaults.navigationContentColor(),
+            selectedTextColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = Gal9NavigationDefaults.navigationContentColor(),
+            indicatorColor = Gal9NavigationDefaults.navigationIndicatorColor(),
         ),
         navigationRailItemColors = NavigationRailItemDefaults.colors(
-            selectedIconColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = NiaNavigationDefaults.navigationContentColor(),
-            selectedTextColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = NiaNavigationDefaults.navigationContentColor(),
-            indicatorColor = NiaNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = Gal9NavigationDefaults.navigationContentColor(),
+            selectedTextColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = Gal9NavigationDefaults.navigationContentColor(),
+            indicatorColor = Gal9NavigationDefaults.navigationIndicatorColor(),
         ),
         navigationDrawerItemColors = NavigationDrawerItemDefaults.colors(
-            selectedIconColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = NiaNavigationDefaults.navigationContentColor(),
-            selectedTextColor = NiaNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = NiaNavigationDefaults.navigationContentColor(),
+            selectedIconColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedIconColor = Gal9NavigationDefaults.navigationContentColor(),
+            selectedTextColor = Gal9NavigationDefaults.navigationSelectedItemColor(),
+            unselectedTextColor = Gal9NavigationDefaults.navigationContentColor(),
         ),
     )
 
     NavigationSuiteScaffold(
         navigationSuiteItems = {
-            NiaNavigationSuiteScope(
+            Gal9NavigationSuiteScope(
                 navigationSuiteScope = this,
                 navigationSuiteItemColors = navigationSuiteItemColors,
             ).run(navigationSuiteItems)
@@ -230,7 +230,7 @@ fun NiaNavigationSuiteScaffold(
         layoutType = layoutType,
         containerColor = Color.Transparent,
         navigationSuiteColors = NavigationSuiteDefaults.colors(
-            navigationBarContentColor = NiaNavigationDefaults.navigationContentColor(),
+            navigationBarContentColor = Gal9NavigationDefaults.navigationContentColor(),
             navigationRailContainerColor = Color.Transparent,
         ),
         modifier = modifier,
@@ -243,7 +243,7 @@ fun NiaNavigationSuiteScaffold(
  * A wrapper around [NavigationSuiteScope] to declare navigation items.
  */
 @OptIn(ExperimentalMaterial3AdaptiveNavigationSuiteApi::class)
-class NiaNavigationSuiteScope internal constructor(
+class Gal9NavigationSuiteScope internal constructor(
     private val navigationSuiteScope: NavigationSuiteScope,
     private val navigationSuiteItemColors: NavigationSuiteItemColors,
 ) {
@@ -272,23 +272,23 @@ class NiaNavigationSuiteScope internal constructor(
 
 @ThemePreviews
 @Composable
-fun NiaNavigationBarPreview() {
-    val items = listOf("For you", "Saved", "Interests")
+fun Gal9NavigationBarPreview() {
+    val items = listOf("Home", "Saved", "Logs")
     val icons = listOf(
-        NiaIcons.UpcomingBorder,
-        NiaIcons.BookmarksBorder,
-        NiaIcons.Grid3x3,
+        Gal9Icons.HomeBorder,
+        Gal9Icons.BookmarksBorder,
+        Gal9Icons.Logs,
     )
     val selectedIcons = listOf(
-        NiaIcons.Upcoming,
-        NiaIcons.Bookmarks,
-        NiaIcons.Grid3x3,
+        Gal9Icons.Home,
+        Gal9Icons.Bookmarks,
+        Gal9Icons.Logs,
     )
 
-    NiaTheme {
-        NiaNavigationBar {
+    Gal9Theme {
+        Gal9NavigationBar {
             items.forEachIndexed { index, item ->
-                NiaNavigationBarItem(
+                Gal9NavigationBarItem(
                     icon = {
                         Icon(
                             imageVector = icons[index],
@@ -312,23 +312,23 @@ fun NiaNavigationBarPreview() {
 
 @ThemePreviews
 @Composable
-fun NiaNavigationRailPreview() {
-    val items = listOf("For you", "Saved", "Interests")
+fun Gal9NavigationRailPreview() {
+    val items = listOf("Home", "Saved", "Logs")
     val icons = listOf(
-        NiaIcons.UpcomingBorder,
-        NiaIcons.BookmarksBorder,
-        NiaIcons.Grid3x3,
+        Gal9Icons.HomeBorder,
+        Gal9Icons.BookmarksBorder,
+        Gal9Icons.Logs,
     )
     val selectedIcons = listOf(
-        NiaIcons.Upcoming,
-        NiaIcons.Bookmarks,
-        NiaIcons.Grid3x3,
+        Gal9Icons.Home,
+        Gal9Icons.Bookmarks,
+        Gal9Icons.Logs,
     )
 
-    NiaTheme {
-        NiaNavigationRail {
+    Gal9Theme {
+        Gal9NavigationRail {
             items.forEachIndexed { index, item ->
-                NiaNavigationRailItem(
+                Gal9NavigationRailItem(
                     icon = {
                         Icon(
                             imageVector = icons[index],
@@ -351,9 +351,9 @@ fun NiaNavigationRailPreview() {
 }
 
 /**
- * Now in Android navigation default values.
+ * Gal9 navigation default values.
  */
-object NiaNavigationDefaults {
+object Gal9NavigationDefaults {
     @Composable
     fun navigationContentColor() = MaterialTheme.colorScheme.onSurfaceVariant
 

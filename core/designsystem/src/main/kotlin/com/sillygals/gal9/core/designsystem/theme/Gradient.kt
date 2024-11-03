@@ -16,15 +16,25 @@
 
 package com.sillygals.gal9.core.designsystem.theme
 
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 /**
- * Gal9 colors.
+ * A class to model gradient color values for Gal9.
+ *
+ * @param top The top gradient color to be rendered.
+ * @param bottom The bottom gradient color to be rendered.
+ * @param container The container gradient color over which the gradient will be rendered.
  */
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+@Immutable
+data class GradientColors(
+    val top: Color = Color.Unspecified,
+    val bottom: Color = Color.Unspecified,
+    val container: Color = Color.Unspecified,
+)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+/**
+ * A composition local for [GradientColors].
+ */
+val LocalGradientColors = staticCompositionLocalOf { GradientColors() }
